@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Profile</h2>
+<form method="post" enctype="multipart/form-data">
+  <label>Name</label><br><input name="name" type="text" value="{{ profile['name'] or '' }}"><br>
+  <label>Age</label><br><input name="age" type="number" value="{{ profile['age'] or '' }}"><br>
+  <label>Religion</label><br><input name="religion" type="text" value="{{ profile['religion'] or '' }}"><br>
+  <label>City</label><br><input name="city" type="text" value="{{ profile['city'] or '' }}"><br>
+  <label>Bio</label><br><textarea name="bio">{{ profile['bio'] or '' }}</textarea><br>
+  <label>Photo</label><br><input name="photo" type="file" accept="image/*"><br>
+  <button>Save</button>
+</form>
+{% endblock %}

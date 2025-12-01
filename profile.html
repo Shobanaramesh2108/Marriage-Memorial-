@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ p['name'] or 'Profile' }}</h2>
+{% if p.photo %}
+  <img src="{{ url_for('static', filename='uploads/' + p.photo) }}" width="180">
+{% endif %}
+<p>Age: {{ p['age'] or 'N/A' }}</p>
+<p>Religion: {{ p['religion'] or 'N/A' }}</p>
+<p>City: {{ p['city'] or 'N/A' }}</p>
+<p>Bio: {{ p['bio'] or '' }}</p>
+{% endblock %}

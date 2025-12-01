@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; max-width:900px; margin:0 auto; padding:10px; }
+header { display:flex; justify-content:space-between; align-items:center; }
+a { text-decoration:none; color: #0066cc; }
+.profiles { display:flex; flex-wrap:wrap; gap:10px; }
+.card { border:1px solid #ddd; padding:8px; width:200px; border-radius:6px; }
+.no-photo { background:#f1f1f1; height:120px; display:flex; align-items:center; justify-content:center; color:#666; }
+.flashes li { list-style:none; padding:6px; border-radius:4px; margin-bottom:6px; }
+.success { background:#e6ffed; } .danger { background:#ffe6e6; } .info{background:#e6f0ff;}

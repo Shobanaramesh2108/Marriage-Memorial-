@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Browse Profiles</h2>
+<form method="get">
+  <input name="q" placeholder="Search by name, city or religion" value="{{ q }}">
+  <button>Search</button>
+</form>
+<div class="profiles">
+{% for p in profiles %}
+  <div class="card">
+    {% if p.photo %}
+      <img src="{{ url_for('static', filename='uploads/' + p.photo) }}" alt="photo" width="120">
+    {% else %}
+      <div class="no-photo">No Photo</div>
+    {% endif %}
+    <h3>{{ p['name'] or 'No name' }}</h3>
+    <p>{{ p['city'] or '' }} - {{ p['religion'] or '' }}</p>
+    <p><a href="{{ url_for('profile', uid=p['id']) }}">View profile</a></p>
+  </div>
+{% else %}
+  <p>No profiles yet.</p>
+{% endfor %}
+</div>
+{% endblock %}
